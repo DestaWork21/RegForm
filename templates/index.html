@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and Registration</title>
+</head>
+<body>
+<h1>Login and Registration</h1>
+<!-- #1creating regisration form -->
+<fieldset>
+	<legend>Register</legend>
+	<form action="/register" method= "POST">
+	<p>First Name:</p><input type="text" name="first">
+	<p>Last Name:</p><input type="text" name="last">
+	<p>Email:</p><input type="text" name="email">
+	<p>Password:</p><input type="password" name="password">
+	<p>Password Confirmation:</p><input type="password" name="pass_confirm">
+	<input type="submit" name="button" value="Register">
+	</form> 
+</fieldset>
+<!-- #2 creating loging form -->
+<fieldset>
+	<legend>Log In</legend>
+	<form action="/login" method= "POST">
+	<p>Email:</p><input type="text" name="email">
+	<p>Password:</p><input type="password" name="password">
+	<input type="submit" name="button" value="Log In">
+	</form> 
+</fieldset>
+	<!-- #3 creating messsage session in index -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p style= 'color:rgb(188, 199, 33);'>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  
+</body>
+</html>
